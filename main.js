@@ -33,7 +33,7 @@
 // ================================================================
 (function aiChatbot() {
   // ⚠️  GANTI dengan API key Gemini kamu dari https://aistudio.google.com/apikey
-  const GEMINI_API_KEY = "AQ.Ab8RN6K2I6azeep3S9_EI_RFsARw6ew9JonCXMxiYjliiN_f_w";
+  const GEMINI_API_KEY = "AQ.Ab8RN6KVs09alkWDEzBTalEqEh9TtjJ-f553Y8SK5UtW3vfJ-w";
   const GEMINI_MODEL = "gemini-2.5-flash";
   const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
