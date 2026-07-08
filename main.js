@@ -34,10 +34,8 @@
 (function aiChatbot() {
   // ⚠️  GANTI dengan API key Gemini kamu dari https://aistudio.google.com/apikey
   // ⚠️  GANTI dengan API key Gemini kamu dari https://aistudio.google.com/apikey
-  const GEMINI_API_KEY = "AQ.Ab8RN6JECpi0lDQZJKGsR3JuBSvKGO0fyYlBULHrcgxcQWNSyg";
-  const GEMINI_MODEL = "gemini-2.5-flash";
-  const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
-
+  // Endpoint Netlify Function
+  const GEMINI_URL = "/.netlify/functions/chat";
   const SYSTEM_PROMPT = `Kamu adalah LIA (Legal Information Assistant).
 
 LIA merupakan AI Assistant yang membantu masyarakat Indonesia
@@ -331,9 +329,14 @@ Silakan tuliskan pertanyaan Anda.
     try {
       // Gemini API: system instruction + conversation history
       const response = await fetch(GEMINI_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+      method: "POST",
+      headers: {
+      "Content-Type": "application/json"
+       },
+      body: JSON.stringify({
+        message: finalPrompt
+       })
+    });
           system_instruction: {
             parts: [{ text: SYSTEM_PROMPT }]
           },
