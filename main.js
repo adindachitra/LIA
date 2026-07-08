@@ -33,9 +33,10 @@
 // ================================================================
 (function aiChatbot() {
   // ⚠️  GANTI dengan API key Gemini kamu dari https://aistudio.google.com/apikey
-  const GEMINI_API_KEY = "AQ.Ab8RN6KVs09alkWDEzBTalEqEh9TtjJ-f553Y8SK5UtW3vfJ-w";
+  // ⚠️  GANTI dengan API key Gemini kamu dari https://aistudio.google.com/apikey
+  const GEMINI_API_KEY = "AQ.Ab8RN6JECpi0lDQZJKGsR3JuBSvKGO0fyYlBULHrcgxcQWNSyg";
   const GEMINI_MODEL = "gemini-2.5-flash";
-  const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+  const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
   const SYSTEM_PROMPT = `Kamu adalah LIA (Legal Information Assistant).
 
